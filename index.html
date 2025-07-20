@@ -38,18 +38,16 @@
         }
         .chart-container {
             position: relative;
-            height: 30vh;
+            height: 300px;
             width: 100%;
             max-width: 450px;
-            max-height: 450px;
             margin: auto;
         }
         .radar-chart-container {
             position: relative;
-            height: 45vh;
+            height: 300px;
             width: 100%;
             max-width: 500px;
-            max-height: 500px;
             margin: auto;
         }
         .flow-item {
@@ -59,13 +57,21 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+            .radar-chart-container {
+                height: 400px;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
     <nav id="navbar" class="sticky top-0 z-50 bg-white/70 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-4">
-            <div class="flex justify-center items-center py-2 space-x-1 md:space-x-2 text-xs md:text-sm">
+            <div class="flex justify-center items-center flex-wrap py-2 gap-y-1 space-x-1 md:space-x-2 text-xs md:text-sm">
                 <a href="#overview" class="nav-link px-3 py-2 rounded-full font-semibold text-gray-700 hover:bg-gray-200 transition-colors">Overview</a>
                 <a href="#phase1" class="nav-link px-3 py-2 rounded-full font-semibold text-gray-700 hover:bg-gray-200 transition-colors">Phase 1</a>
                 <a href="#phase2" class="nav-link px-3 py-2 rounded-full font-semibold text-gray-700 hover:bg-gray-200 transition-colors">Phase 2</a>
@@ -78,7 +84,7 @@
 
     <div class="container mx-auto p-4 md:p-8">
         
-        <header class="text-center py-16">
+        <header class="text-center py-12 md:py-16">
             <h1 class="text-4xl md:text-6xl font-extrabold text-[#5c4b42]">The Complete Data Science & ML Roadmap</h1>
             <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">An interactive guide to mastering the skills needed for a career in data science, from foundational Python to advanced machine learning.</p>
         </header>
@@ -86,7 +92,7 @@
         <main>
             <section id="overview" class="py-12 scroll-mt-20">
                 <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
-                    <h2 class="text-3xl font-bold text-center text-[#5c4b42] mb-4">Learning Effort Distribution</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#5c4b42] mb-4">Learning Effort Distribution</h2>
                     <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">This chart provides a high-level breakdown of the estimated time and effort for each phase. Use it to understand the overall structure of your learning journey. Hover over a section for details.</p>
                     <div class="chart-container">
                         <canvas id="effortDistributionChart"></canvas>
@@ -98,8 +104,8 @@
                 
                 <section id="phase1" class="scroll-mt-20 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
                     <div class="accordion-header cursor-pointer flex justify-between items-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-4xl font-extrabold">1.</span> Foundations: The Bedrock</h2>
-                        <span class="arrow-icon text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
+                        <h2 class="text-xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-3xl md:text-4xl font-extrabold">1.</span> Foundations: The Bedrock</h2>
+                        <span class="arrow-icon text-2xl md:text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
                     </div>
                     <div class="accordion-content">
                         <div class="pt-6 border-t mt-6">
@@ -131,8 +137,8 @@
 
                 <section id="phase2" class="scroll-mt-20 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
                     <div class="accordion-header cursor-pointer flex justify-between items-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-4xl font-extrabold">2.</span> The Core Toolkit</h2>
-                        <span class="arrow-icon text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
+                        <h2 class="text-xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-3xl md:text-4xl font-extrabold">2.</span> The Core Toolkit</h2>
+                        <span class="arrow-icon text-2xl md:text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
                     </div>
                     <div class="accordion-content">
                         <div class="pt-6 border-t mt-6">
@@ -164,23 +170,23 @@
                 
                 <section id="phase3" class="scroll-mt-20 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
                      <div class="accordion-header cursor-pointer flex justify-between items-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-4xl font-extrabold">3.</span> The Data Science Lifecycle</h2>
-                        <span class="arrow-icon text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
+                        <h2 class="text-xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-3xl md:text-4xl font-extrabold">3.</span> The Data Science Lifecycle</h2>
+                        <span class="arrow-icon text-2xl md:text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
                     </div>
                     <div class="accordion-content">
                         <div class="pt-6 border-t mt-6">
                             <p class="text-gray-600 mb-8">This phase is about process. Understanding this structured, iterative workflow is what elevates a programmer to a data scientist who can solve business problems. Note that this is a cycle; insights from a later stage often require returning to an earlier one.</p>
                             <div class="relative flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 flex-wrap">
                                 <div class="flow-item w-full md:w-1/3 p-4 bg-stone-50 border rounded-lg text-center"><strong>1.</strong> Business Understanding</div>
-                                <div class="text-2xl md:text-xl text-gray-400 font-bold transform md:-rotate-90">➔</div>
+                                <div class="text-xl md:text-2xl text-gray-400 font-bold transform md:-rotate-90">➔</div>
                                 <div class="flow-item w-full md:w-1/3 p-4 bg-stone-50 border rounded-lg text-center"><strong>2.</strong> Data Acquisition & Cleaning</div>
-                                <div class="text-2xl md:text-xl text-gray-400 font-bold transform md:-rotate-90">➔</div>
+                                <div class="text-xl md:text-2xl text-gray-400 font-bold transform md:-rotate-90">➔</div>
                                 <div class="flow-item w-full md:w-1/3 p-4 bg-stone-50 border rounded-lg text-center"><strong>3.</strong> EDA & Feature Engineering</div>
-                                <div class="text-2xl md:text-xl text-gray-400 font-bold transform md:rotate-180 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">➔</div>
+                                <div class="text-xl md:text-2xl text-gray-400 font-bold transform md:rotate-180 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">➔</div>
                                 <div class="flow-item w-full md:w-1/3 p-4 bg-stone-50 border rounded-lg text-center mt-4 md:mt-12"><strong>4.</strong> Modeling & Evaluation</div>
-                                <div class="text-2xl md:text-xl text-gray-400 font-bold transform md:rotate-90">➔</div>
+                                <div class="text-xl md:text-2xl text-gray-400 font-bold transform md:rotate-90">➔</div>
                                 <div class="flow-item w-full md:w-1/3 p-4 bg-stone-50 border rounded-lg text-center"><strong>5.</strong> Deployment & Monitoring</div>
-                                <div class="text-2xl md:text-xl text-gray-400 font-bold transform md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2">↺</div>
+                                <div class="text-xl md:text-2xl text-gray-400 font-bold transform md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2">↺</div>
                             </div>
                         </div>
                     </div>
@@ -188,8 +194,8 @@
                 
                 <section id="phase4" class="scroll-mt-20 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
                     <div class="accordion-header cursor-pointer flex justify-between items-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-4xl font-extrabold">4.</span> Mastering Machine Learning</h2>
-                        <span class="arrow-icon text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
+                        <h2 class="text-xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-3xl md:text-4xl font-extrabold">4.</span> Mastering Machine Learning</h2>
+                        <span class="arrow-icon text-2xl md:text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
                     </div>
                     <div class="accordion-content">
                         <div class="pt-6 border-t mt-6">
@@ -233,8 +239,8 @@
                 
                 <section id="phase5" class="scroll-mt-20 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200">
                     <div class="accordion-header cursor-pointer flex justify-between items-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-4xl font-extrabold">5.</span> Forging Expertise</h4>
-                        <span class="arrow-icon text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
+                        <h2 class="text-xl md:text-3xl font-bold text-[#a58d7f]"><span class="text-3xl md:text-4xl font-extrabold">5.</span> Forging Expertise</h4>
+                        <span class="arrow-icon text-2xl md:text-3xl text-[#a58d7f] transition-transform duration-300">&#9654;</span>
                     </div>
                      <div class="accordion-content">
                         <div class="pt-6 border-t mt-6">
@@ -268,7 +274,7 @@
             </div>
         </main>
 
-        <footer class="text-center py-16 mt-8 border-t">
+        <footer class="text-center py-12 md:py-16 mt-8 border-t">
             <p class="text-gray-500">Continuous learning is the key. Good luck on your journey!</p>
         </footer>
 
@@ -417,4 +423,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-```
